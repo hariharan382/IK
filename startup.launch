@@ -1,0 +1,15 @@
+<launch>
+
+<!--  <include file="$(find unoffcial_dog_description)/launch/gazebo.launch"/>   -->
+    
+  <arg name="joystick_port" default="js1"/>
+  <node name="joy_node" pkg="joy" type="joy_node" >
+  	<param name="dev" type="string" value="/dev/input/$(arg joystick_port)" />
+  </node>
+  
+  <node name="rpi_node" pkg="unoffcial_dog_description" type="rpi.py" />
+  	
+  	
+  
+
+</launch>
